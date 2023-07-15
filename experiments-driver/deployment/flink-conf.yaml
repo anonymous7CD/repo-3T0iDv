@@ -310,3 +310,11 @@ rest.bind-address: localhost
 
 # Interval in milliseconds for refreshing the monitored directories.
 #historyserver.archive.fs.refresh-interval: 10000
+
+external-resources: gpu
+# Define the driver factory class of gpu resource.
+external-resource.gpu.driver-factory.class: org.apache.flink.externalresource.gpu.GPUDriverFactory
+# Define the amount of gpu resource per TaskManager.
+external-resource.gpu.amount: 1
+# Enable the coordination mode if you run it in standalone mode
+external-resource.gpu.param.discovery-script.args: --enable-coordination
